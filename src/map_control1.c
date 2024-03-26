@@ -20,8 +20,8 @@ int	map_read(char *map_name)
 {
 	int		fd;
 	int		i;
-	char	line;
-	size_t	line_len;
+	char	chr;
+	size_t	file_len;
 
 	i = 1;
 	line_len = 0;
@@ -30,13 +30,13 @@ int	map_read(char *map_name)
 		return (0);
 	while (i > 0)
 	{
-		i = read(fd, &line, 1);
+		i = read(fd, &chr, 1);
 		if (i <= 0)
 			break ;
-		line_len += i;
+		file_len += i;
 	}
 	close(fd);
-	return (line_len);
+	return (file_len);
 }
 
 char	**map_build(char *map_name, int len)
