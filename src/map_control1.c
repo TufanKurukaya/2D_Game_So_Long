@@ -24,7 +24,7 @@ int	map_read(char *map_name)
 	size_t	file_len;
 
 	i = 1;
-	line_len = 0;
+	file_len = 0;
 	fd = open(map_name, O_RDONLY);
 	if (fd < 0)
 		return (0);
